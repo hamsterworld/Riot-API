@@ -27,7 +27,7 @@ public class SummonerService {
         private ObjectMapper objectMapper = new ObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
         @Value("${riot.api.key}")
-        private String mykey;
+        private String mykey = "RGAPI-ebb30752-5946-42b4-be51-e2304e2c350a"; //test때문에 잠시해놓음.
 
         public SummonerDTO callRiotAPISummonerByName(String summonerName){
 
@@ -40,7 +40,7 @@ public class SummonerService {
                 HttpClient client = HttpClientBuilder.create().build();
                 HttpGet request = new HttpGet(serverUrl + "/lol/summoner/v4/summoners/by-name/" + summonerName + "?api_key=" + mykey);
                 HttpResponse response = client.execute(request);
-
+                System.out.println("mykey = " + mykey);
                 if(response.getStatusLine().getStatusCode() != 200){
                     return null;
                 }
@@ -65,7 +65,7 @@ public class SummonerService {
             try {
 
                 HttpClient client = HttpClientBuilder.create().build();
-                HttpGet request = new HttpGet(serverUrl + "/lol/match/v5/matches/by-puuid/" + puuid + "/ids?api_key=" + mykey);
+                HttpGet request = new HttpGet(serverUrl + "/lol/match/v5/matches/by-puuid/" + puuid + "/ids?count=5&api_key=" + mykey);
                 HttpResponse response = client.execute(request);
 
                 if(response.getStatusLine().getStatusCode() != 200){
@@ -76,10 +76,6 @@ public class SummonerService {
 //                InputStream content = entity.getContent();
 //                String messagebody = StreamUtils.copyToString(content, StandardCharsets.UTF_8);
                 result = objectMapper.readValue(entity.getContent(),List.class);
-
-                for (String s : result) {
-                    System.out.println(s);
-                }
 
             } catch (IOException e){
                 e.printStackTrace();

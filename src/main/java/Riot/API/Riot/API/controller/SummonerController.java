@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -27,6 +28,27 @@ public class SummonerController {
 
         return apiResult;
     }
+
+    @PostMapping(value = "/gamerecordbyname")
+    @ResponseBody
+    public ArrayList<MetaData1> callGameRecordByName(String summonerName){
+
+        summonerName = summonerName.replaceAll(" ","%20");
+        ArrayList<MetaData1> list = new ArrayList<>();
+
+        SummonerDTO summonerResult = summonerService.callRiotAPISummonerByName(summonerName);
+        List<String> MatchIdResult = summonerService.callRiotAPISummonerMatchIdBypuuid(summonerResult.getPuuid());
+        for (String s : MatchIdResult) {
+            MetaData1 metaData1 = summonerService.callRiotAPIGameRecordByMatchId(s);
+            list.add(metaData1);
+        };
+
+        return list;
+    }
+
+
+
+
 
     @PostMapping(value = "/matchidByppuid")
     @ResponseBody
