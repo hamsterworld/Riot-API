@@ -2,10 +2,9 @@ package Riot.API.Riot.API.dto;
 
 import lombok.Data;
 
-import java.util.List;
+@Data
+public class TeamDto {
 
-
-public class MatchIdDto {
-
+    private boolean win;
 
 }

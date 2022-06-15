@@ -1,6 +1,7 @@
 package Riot.API.Riot.API.controller;
 
-import Riot.API.Riot.API.dto.MatchIdDto;
+import Riot.API.Riot.API.dto.MetaData1;
+import Riot.API.Riot.API.dto.MetadataDto;
 import Riot.API.Riot.API.dto.SummonerDTO;
 import Riot.API.Riot.API.service.SummonerService;
 import lombok.RequiredArgsConstructor;
@@ -31,7 +32,16 @@ public class SummonerController {
     @ResponseBody
     public List<String> callMatchIdByPpuid(String ppuid){
 
-        List<String> apiResult = summonerService.callRiotAPISummonerGameRecord(ppuid);
+        List<String> apiResult = summonerService.callRiotAPISummonerMatchIdBypuuid(ppuid);
+
+        return apiResult;
+    }
+
+    @PostMapping(value = "/matchid")
+    @ResponseBody
+    public MetaData1 callMatchIdBymatchId(String matchid){
+
+        MetaData1 apiResult = summonerService.callRiotAPIGameRecordByMatchId(matchid);
 
         return apiResult;
     }
