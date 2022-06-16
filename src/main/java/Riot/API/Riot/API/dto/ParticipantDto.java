@@ -14,6 +14,13 @@ public class ParticipantDto {
     private int tripleKills;
     private int quadraKills;
     private int pentaKills;
+    private int item0;
+    private int item1;
+    private int item2;
+    private int item3;
+    private int item4;
+    private int item5;
+    private int item6;
     private String championName;
     private int totalDamageDealtToChampions;
     private boolean win;

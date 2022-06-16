@@ -15,8 +15,11 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StreamUtils;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 @Service
@@ -111,6 +114,37 @@ public class SummonerService {
 
             return result;
         }
+
+    public MetaData1 callRiotAPIItemList() {
+
+        MetaData1 result;
+
+        String serverUrl = " https://na1.api.riotgames.com";
+
+        try {
+
+            HttpClient client = HttpClientBuilder.create().build();
+            HttpGet request = new HttpGet(serverUrl + "/lol/static-data/v3/items?api_key=" + mykey);
+            HttpResponse response = client.execute(request);
+
+            if (response.getStatusLine().getStatusCode() != 200) {
+                return null;
+            }
+
+            HttpEntity entity = response.getEntity();
+            InputStream content = entity.getContent();
+            String messagebody = StreamUtils.copyToString(content, StandardCharsets.UTF_8);
+            //result = objectMapper.readValue(entity.getContent(), MetaData1.class);
+            System.out.println("아이템 정보가 뭐가올려나.." + messagebody);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+
+        return null;
+    }
+
+
 
 
 
