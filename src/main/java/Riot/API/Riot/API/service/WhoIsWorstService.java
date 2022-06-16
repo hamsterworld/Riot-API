@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class WhoIsAssholeService {
+public class WhoIsWorstService {
 
     public List whoIsAsshole(List<MetaData1> AssholeList){
 

@@ -4,22 +4,16 @@ import Riot.API.Riot.API.dto.MetaData1;
 import Riot.API.Riot.API.dto.ParticipantDto;
 import Riot.API.Riot.API.dto.SummonerDTO;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.*;
 
-
-class WhoIsAssholeServiceTest {
+class WhoIsWorstServiceTest {
 
     static SummonerService summonerService;
     static List<MetaData1> list = new ArrayList<>();
@@ -84,7 +78,7 @@ class WhoIsAssholeServiceTest {
 
 
     @Test
-    @DisplayName("최다데스한 사람은 대왕벌레일 가능성이 높다.")
+    @DisplayName("최다데스한 사람은 worst 가능성이 높다.")
     void whoIsAsshole2() {
 
         //게임하나에대한 참가자들의정보
@@ -110,7 +104,7 @@ class WhoIsAssholeServiceTest {
     }
 
     @Test
-    @DisplayName("최소킬수한 사람은 대왕벌레일 가능성이 높다.")
+    @DisplayName("최소킬수한 사람은 worst 가능성이 높다.")
     void whoIsAsshole3() {
 
         //게임하나에대한 참가자들의정보
@@ -136,7 +130,7 @@ class WhoIsAssholeServiceTest {
     }
 
     @Test
-    @DisplayName("최소어시한 사람은 대왕벌레일 가능성이 높다.")
+    @DisplayName("최소어시한 사람은 worst 가능성이 높다.")
     void whoIsAsshole4() {
 
         //게임하나에대한 참가자들의정보
@@ -162,7 +156,7 @@ class WhoIsAssholeServiceTest {
     }
 
     @Test
-    @DisplayName("최소딜량한 사람은 대왕벌레일 가능성이 높다.")
+    @DisplayName("최소딜량한 사람은 worst 가능성이 높다.")
     void whoIsAsshole5() {
 
         //게임하나에대한 참가자들의정보
@@ -188,7 +182,7 @@ class WhoIsAssholeServiceTest {
     }
 
     @Test
-    @DisplayName("최소딜량한 사람은 대왕벌레일 가능성이 높다.")
+    @DisplayName("최소딜량한 사람은 worst 가능성이 높다.")
     void whoIsAsshole6() {
 
         //게임하나에대한 참가자들의정보
@@ -212,6 +206,9 @@ class WhoIsAssholeServiceTest {
 
 
     }
+
+
+
 
 
 }
