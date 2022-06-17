@@ -1,8 +1,7 @@
 package Riot.API.Riot.API.controller;
 
-import Riot.API.Riot.API.dto.MetaData1;
-import Riot.API.Riot.API.dto.MetadataDto;
-import Riot.API.Riot.API.dto.SummonerDTO;
+import Riot.API.Riot.API.dto.gamerecord.MetaData1;
+import Riot.API.Riot.API.dto.summoner.SummonerDTO;
 import Riot.API.Riot.API.service.SummonerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;

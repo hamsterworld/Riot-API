@@ -1,7 +1,7 @@
 package Riot.API.Riot.API.service;
 
-import Riot.API.Riot.API.dto.MetaData1;
-import Riot.API.Riot.API.dto.ParticipantDto;
+import Riot.API.Riot.API.dto.gamerecord.MetaData1;
+import Riot.API.Riot.API.dto.gamerecord.ParticipantDto;
 
 import java.util.Comparator;
 import java.util.List;
@@ -21,7 +21,6 @@ public class WhoIsWorstService {
             List<ParticipantDto> participants = metaData1.getInfo().getParticipants();
 
             FindWorstThroughMinimumDamage(participants);
-
         }
 
         return null;

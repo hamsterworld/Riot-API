@@ -1,4 +1,4 @@
-package Riot.API.Riot.API.dto;
+package Riot.API.Riot.API.dto.summoner;
 
 import lombok.Data;
 

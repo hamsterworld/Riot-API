@@ -1,13 +1,12 @@
 package Riot.API.Riot.API.service;
 
-import Riot.API.Riot.API.dto.InfoDto;
-import Riot.API.Riot.API.dto.MetaData1;
-import Riot.API.Riot.API.dto.ParticipantDto;
-import Riot.API.Riot.API.dto.SummonerDTO;
+import Riot.API.Riot.API.dto.gamerecord.InfoDto;
+import Riot.API.Riot.API.dto.gamerecord.MetaData1;
+import Riot.API.Riot.API.dto.gamerecord.ParticipantDto;
+import Riot.API.Riot.API.dto.summoner.SummonerDTO;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.*;
 
@@ -32,13 +31,12 @@ public class DetermineRoleServiceTest {
 
         SummonerDTO summonerResult = summonerService.callRiotAPISummonerByName(summonerName);
         List<String> MatchIdResult = summonerService.callRiotAPISummonerMatchIdBypuuid(summonerResult.getPuuid());
-        for (String s : MatchIdResult) {
 
+        for (String s : MatchIdResult) {
             MetaData1 metaData1 = summonerService.callRiotAPIGameRecordByMatchId(s);
             InfoDto gameRecodeInfo = metaData1.getInfo();
             List<ParticipantDto> participants = gameRecodeInfo.getParticipants();
             SummonersHaveItemList = eachSummonerItemListGetService.EachSummonerItemListGet(participants);
-
         };
 
 

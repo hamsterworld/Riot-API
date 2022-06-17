@@ -2,9 +2,8 @@ package Riot.API.Riot.API.service;
 
 
 
-import Riot.API.Riot.API.dto.MetaData1;
-import Riot.API.Riot.API.dto.MetadataDto;
-import Riot.API.Riot.API.dto.SummonerDTO;
+import Riot.API.Riot.API.dto.gamerecord.MetaData1;
+import Riot.API.Riot.API.dto.summoner.SummonerDTO;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.http.HttpEntity;
@@ -17,6 +16,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 
 @Service
@@ -40,12 +40,12 @@ public class SummonerService {
                 HttpClient client = HttpClientBuilder.create().build();
                 HttpGet request = new HttpGet(serverUrl + "/lol/summoner/v4/summoners/by-name/" + summonerName + "?api_key=" + mykey);
                 HttpResponse response = client.execute(request);
-                System.out.println("mykey = " + mykey);
                 if(response.getStatusLine().getStatusCode() != 200){
                     return null;
                 }
 
                 HttpEntity entity = response.getEntity();
+                InputStream content = entity.getContent();
                 result = objectMapper.readValue(entity.getContent(), SummonerDTO.class);
 
             } catch (IOException e){

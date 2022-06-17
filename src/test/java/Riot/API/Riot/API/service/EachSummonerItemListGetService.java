@@ -1,6 +1,6 @@
 package Riot.API.Riot.API.service;
 
-import Riot.API.Riot.API.dto.ParticipantDto;
+import Riot.API.Riot.API.dto.gamerecord.ParticipantDto;
 
 import java.util.ArrayList;
 import java.util.HashMap;

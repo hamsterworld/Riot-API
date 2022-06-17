@@ -1,11 +1,10 @@
-package Riot.API.Riot.API.dto;
+package Riot.API.Riot.API.dto.summoner;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
-import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Entity
 @Data
 public class Summoner {
 
@@ -15,10 +14,10 @@ public class Summoner {
     private int profileIconId;
 
     private Long revisionDate;
-
-    private String name;
-
-    private String id;
+    @JsonProperty("name")
+    private String summonerName;
+    @JsonProperty("id")
+    private String summonerId;
 
     private String puuid;
 

@@ -1,21 +1,29 @@
 package Riot.API.Riot.API.service;
 
-import Riot.API.Riot.API.dto.InfoDto;
-import Riot.API.Riot.API.dto.MetaData1;
-import Riot.API.Riot.API.dto.ParticipantDto;
-import Riot.API.Riot.API.dto.SummonerDTO;
+import Riot.API.Riot.API.dto.gamerecord.InfoDto;
+import Riot.API.Riot.API.dto.gamerecord.MetaData1;
+import Riot.API.Riot.API.dto.gamerecord.ParticipantDto;
+import Riot.API.Riot.API.dto.summoner.SummonerDTO;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Rollback;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+@SpringBootTest
+@Transactional
+@Rollback(value = false)
 public class EachSummonerItemListGetServiceTest {
 
+
+
     static SummonerService summonerService;
-    //static List<Integer> list = new ArrayList<>();
+    static List<Integer> list = new ArrayList<>();
     static HashMap<String, List<Integer>> SummonersHaveItemList = new HashMap<String,List<Integer>>();
     static List<ParticipantDto> participants;
 
