@@ -1,5 +1,6 @@
 package Riot.API.Riot.API.service;
 
+import Riot.API.Riot.API.dto.datadragon.GameItem;
 import Riot.API.Riot.API.dto.gamerecord.InfoDto;
 import Riot.API.Riot.API.dto.gamerecord.MetaData1;
 import Riot.API.Riot.API.dto.gamerecord.ParticipantDto;
@@ -17,7 +18,7 @@ public class DetermineRoleServiceTest {
     static SummonerService summonerService;
     static EachSummonerItemListGetService eachSummonerItemListGetService;
     //static List<Integer> list = new ArrayList<>();
-    static HashMap<String,List<Integer>> SummonersHaveItemList = new HashMap<String,List<Integer>>();
+    static HashMap<String,List<GameItem>> SummonersHaveItemList = new LinkedHashMap<String,List<GameItem>>();
 
     @BeforeAll
     @DisplayName("각참가자들의 아이템목록까지 꺼낸다.")

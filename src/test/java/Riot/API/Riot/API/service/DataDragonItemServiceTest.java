@@ -1,34 +1,36 @@
 package Riot.API.Riot.API.service;
 
+import Riot.API.Riot.API.aop.executiontimer.ExeTimer;
+import Riot.API.Riot.API.aop.executiontimer.ExecutionTimer;
 import Riot.API.Riot.API.dto.datadragon.GameItem;
 import Riot.API.Riot.API.repository.DataDragonGameItemRepository;
 import Riot.API.Riot.API.repository.DataDragonItemTypeRepository;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
+import org.springframework.context.annotation.Import;
 import org.springframework.test.annotation.Rollback;
-import org.springframework.transaction.annotation.Transactional;
+
 
 import java.util.ArrayList;
 import java.util.List;
 
 @SpringBootTest
-@Transactional
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @Rollback(value = false)
 public class DataDragonItemServiceTest {
 
+
     @Autowired
     DataDragonGameItemRepository dataDragonGameItemRepository;
     @Autowired
-    DataDragonItemTypeRepository dataDragonItemTypeRepository;
+    DataDragonItemService dataDragonItemService;
 
     @BeforeAll
     public void test(){
-        DataDragonItemService dataDragonService = new DataDragonItemService(dataDragonGameItemRepository,dataDragonItemTypeRepository);
-        dataDragonService.SaveItemsByDataDragon();
+
+        dataDragonItemService.SaveItemsByDataDragon();
+
     }
 
     @Test

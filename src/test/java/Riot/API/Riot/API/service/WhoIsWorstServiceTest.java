@@ -74,9 +74,6 @@ class WhoIsWorstServiceTest {
      *
      */
 
-
-
-
     @Test
     @DisplayName("최다데스한 사람은 worst 가능성이 높다.")
     void whoIsAsshole2() {
@@ -151,7 +148,6 @@ class WhoIsWorstServiceTest {
             System.out.println("레드팀 대왕벌레의 이름 = " + maxdeathparticipant2.get().getSummonerName() +" 최소 어시 = " + maxdeathparticipant2.get().getAssists());
 
         }
-
 
     }
 

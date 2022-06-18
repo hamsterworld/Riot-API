@@ -1,5 +1,7 @@
 package Riot.API.Riot.API.service;
 
+import Riot.API.Riot.API.aop.executiontimer.ExeTimer;
+import Riot.API.Riot.API.aop.executiontimer.ExecutionTimer;
 import Riot.API.Riot.API.dto.datadragon.*;
 import Riot.API.Riot.API.repository.DataDragonGameItemRepository;
 import Riot.API.Riot.API.repository.DataDragonItemTypeRepository;
@@ -11,7 +13,9 @@ import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClientBuilder;
+import org.springframework.context.annotation.Import;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -30,12 +34,13 @@ public class DataDragonItemService {
 
     private ObjectMapper objectMapper = new ObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
+    @ExeTimer
     public List<GameItem> SaveItemsByDataDragon(){
 
-        Items result = null;
+        Items result;
         List<Item> items = null;
         List<GameItem> gameItemList = null;
-        ArrayList<ItemType> arrayList = new ArrayList<>();
+        List<ItemType> arrayList = new ArrayList<>();
         try {
             HttpClient client = HttpClientBuilder.create().build();
             HttpGet request = new HttpGet("http://ddragon.leagueoflegends.com/cdn/12.11.1/data/ko_KR/item.json");

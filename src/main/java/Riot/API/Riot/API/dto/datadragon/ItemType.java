@@ -13,11 +13,17 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 @Table(name="ItemType")
+@SequenceGenerator(
+        name="tiemtpye_seq",
+        sequenceName = "itemtypppe_seq",
+        initialValue = 1,allocationSize = 200
+)
 public class ItemType {
     @Id
-    @GeneratedValue
-    @Column(name = "ItemTypeId")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "tiemtpye_seq")
+    @Column(name = "itemtype_id")
     private Long id;
+
     private String ItemType;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "game_id")
