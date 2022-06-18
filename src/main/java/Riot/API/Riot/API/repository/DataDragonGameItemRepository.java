@@ -3,6 +3,7 @@ package Riot.API.Riot.API.repository;
 
 import Riot.API.Riot.API.aop.executiontimer.ExeTimer;
 import Riot.API.Riot.API.dto.datadragon.GameItem;
+import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -27,5 +28,8 @@ public interface DataDragonGameItemRepository extends JpaRepository<GameItem,Lon
 
     //@Query("select m from Member m where m.username in :names")
     //List<Member> findByNames(@Param("names") List<String> names);
+
+    @EntityGraph(attributePaths = {"itemTypes"})
+    List<GameItem> findAll();
 
 }

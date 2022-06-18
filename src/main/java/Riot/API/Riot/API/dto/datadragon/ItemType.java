@@ -9,8 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import javax.persistence.*;
 
 @Entity
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @Table(name="ItemType")
 @SequenceGenerator(

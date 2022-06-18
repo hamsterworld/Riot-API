@@ -3,9 +3,7 @@ package Riot.API.Riot.API.service;
 import Riot.API.Riot.API.dto.datadragon.GameItem;
 import Riot.API.Riot.API.dto.gamerecord.ParticipantDto;
 import Riot.API.Riot.API.repository.DataDragonGameItemRepository;
-import Riot.API.Riot.API.repository.DataDragonItemTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.*;
 
@@ -38,15 +36,20 @@ public class EachSummonerItemListGetService {
             SummonersHaveItemList.put(participant.getSummonerName(),list);
 
         }
+        List<GameItem> gameItems = dataDragonGameItemRepository.findAll();
 
-        for (Map.Entry<String, List<Integer>> stringListEntry : SummonersHaveItemList.entrySet()) {
+        for (Map.Entry<String, List<Integer>> summonerhaveitems : SummonersHaveItemList.entrySet()) {
 
-            List<Integer> value = stringListEntry.getValue();
-            List<GameItem> byitem = dataDragonGameItemRepository.findByitem(value);
-            SummonersHaveGameItemList.put(stringListEntry.getKey(),byitem);
-
+            List<Integer> value = summonerhaveitems.getValue();
+            ArrayList<GameItem> gameList = new ArrayList<>();
+            for (Integer itemcode : value) {
+                Optional<GameItem> gameItem1 = gameItems.stream().filter(gameItem -> gameItem.getItemCode() == itemcode)
+                        .findFirst();
+                GameItem gameItem2 = gameItem1.get();
+                gameList.add(gameItem2);
+            }
+            SummonersHaveGameItemList.put(summonerhaveitems.getKey(), gameList);
         }
-
         return SummonersHaveGameItemList;
     }
 
