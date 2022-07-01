@@ -1,13 +1,14 @@
-package Riot.API.Riot.API.service;
+package Riot.API.Riot.API.service.EachSummonerItemListGetService;
 
 import Riot.API.Riot.API.dto.datadragon.GameItem;
 import Riot.API.Riot.API.dto.gamerecord.ParticipantDto;
 import Riot.API.Riot.API.repository.DataDragonGameItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.*;
 
-
+@Service
 public class EachSummonerItemListGetService {
 
     @Autowired

@@ -27,7 +27,7 @@ public class SummonerService {
         private ObjectMapper objectMapper = new ObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
         @Value("${riot.api.key}")
-        private String mykey= "RGAPI-80e50dc4-9890-4133-82a5-f9daa52fb25d";
+        private String mykey= "RGAPI-04ce284f-9896-44ba-a303-1780300637a8";
 
         public SummonerDTO callRiotAPISummonerByName(String summonerName){
 

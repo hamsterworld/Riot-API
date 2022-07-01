@@ -42,6 +42,10 @@ public class SummonerController {
             list.add(metaData1);
         };
 
+        //여기는 entity로 보여주면안되고 dto로 보내줘야한다.
+        //첫번째로 뭐냐면 말그대로 게임에대한 전적조회기능이다.
+        //최근 5경기만 조회할수있게 해보자.
+
         return list;
     }
 

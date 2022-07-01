@@ -1,14 +1,11 @@
-package Riot.API.Riot.API.service;
+package Riot.API.Riot.API.service.DataDragonItemSerivce;
 
-import Riot.API.Riot.API.aop.executiontimer.ExeTimer;
-import Riot.API.Riot.API.aop.executiontimer.ExecutionTimer;
 import Riot.API.Riot.API.dto.datadragon.GameItem;
 import Riot.API.Riot.API.repository.DataDragonGameItemRepository;
-import Riot.API.Riot.API.repository.DataDragonItemTypeRepository;
+import Riot.API.Riot.API.service.DataDragonItemService;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.annotation.Import;
 import org.springframework.test.annotation.Rollback;
 
 
@@ -111,8 +108,5 @@ public class DataDragonItemServiceTest {
         List<GameItem> byitem = dataDragonGameItemRepository.findByitem(itemcodes);
 
     }
-    
-
-
 
 }

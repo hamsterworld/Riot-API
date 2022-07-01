@@ -1,4 +1,4 @@
-package Riot.API.Riot.API.service;
+package Riot.API.Riot.API.service.WhoIsWorstSerivce;
 
 import Riot.API.Riot.API.dto.gamerecord.MetaData1;
 import Riot.API.Riot.API.dto.gamerecord.ParticipantDto;
