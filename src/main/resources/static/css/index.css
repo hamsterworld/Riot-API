@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR|ZCOOL+QingKe+HuangYou');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+
+*{
+	margin:0;
+	padding:0;
+	color:black;
+	font-family: 'ZCOOL QingKe HuangYou', cursive;
+}
+body{
+    background-image: url(/image/3dd4a50dd89dc95f5e4a1dfc0ffa6d2531287f24.jpg);
+    background-size:cover;
+}
+header{
+    text-align: center;
+}
+
+h1{
+    font-size: 50px;
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+}
+
+a {
+	text-decoration: none;
+	outline: none;
+}
+
+#container {
+    min-height: 100vh;
+    position: relative;
+    width: 100%;
+}
+
+footer {
+    padding-top: 20px;
+	width: 100%;
+	height: 110px; /* 내용물에 따라 알맞는 값 설정 */
+	bottom: 0px;
+	position: absolute;
+    border-top: 1px solid black;
+    margin: 0 auto;
+}
+
+#footerdiv{
+    width: 500px;
+    margin: 0 auto;
+}
+
+#name {
+    width:300px;
+    height:25px;
+    font-size:20px;
+  }
+#imagewrap{
+    width: 100px;
+   margin:0 auto;
+   margin-bottom: 50px;
+   margin-top: 50px;
+   height: 100px;
+   text-align: center;
+}
+
+img { 
+    width : 100%;
+    height: 100%; 
+   }
+
+#wrap{
+    text-align: center;
+    width: 500px;
+   margin:0 auto;
+}
+
+input[type=text]{
+    width: 100px;
+    border: 0;
+    font-size: 15px;
+    font-family: 'Nanum Myeongjo', serif;
+    color:  black;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    outline: none;
+    padding-left: 10px;
+    background-color: rgb(233, 233, 233);
+}
+
+input[type=submit]{
+    border: 0.5px solid skyblue;
+    background-color: rgba(0,0,0,0);
+    color: skyblue;
+    padding: 5px;  
+    font-size: 14px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+input[type=submit]:hover{
+    color:white;
+    background-color: skyblue;
+}
+
+#searchbutton{
+    display: inline-block;
+    position:absolute;
+}
