@@ -8,8 +8,14 @@
 	font-family: 'ZCOOL QingKe HuangYou', cursive;
 }
 body{
-    background-image: url(/image/3dd4a50dd89dc95f5e4a1dfc0ffa6d2531287f24.jpg);
+    background: url(image/3dd4a50dd89dc95f5e4a1dfc0ffa6d2531287f24.jpg) no-repeat fixed;
     background-size:cover;
+    margin: 0;
+    padding: 0;
+}
+html{
+    margin: 0;
+  padding: 0;
 }
 header{
     text-align: center;
@@ -37,9 +43,9 @@ footer {
 	width: 100%;
 	height: 110px; /* 내용물에 따라 알맞는 값 설정 */
 	bottom: 0px;
-	position: absolute;
     border-top: 1px solid black;
     margin: 0 auto;
+    position: absolute;
 }
 
 #footerdiv{
@@ -61,15 +67,16 @@ footer {
    text-align: center;
 }
 
-img { 
+img {
     width : 100%;
-    height: 100%; 
+    height: 100%;
    }
 
-#wrap{
+.wrap{
     text-align: center;
     width: 500px;
-   margin:0 auto;
+    margin:0 auto;
+    padding-bottom: 150px;
 }
 
 input[type=text]{
@@ -89,7 +96,7 @@ input[type=submit]{
     border: 0.5px solid skyblue;
     background-color: rgba(0,0,0,0);
     color: skyblue;
-    padding: 5px;  
+    padding: 5px;
     font-size: 14px;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
@@ -103,4 +110,17 @@ input[type=submit]:hover{
 #searchbutton{
     display: inline-block;
     position:absolute;
+}
+
+#textbox{
+    position:absolute;
+    top:230px;
+    right:70px;
+
+}
+
+#scrollbox{
+    padding-top: 30px;
+    position:relative;
+    text-align: center;
 }

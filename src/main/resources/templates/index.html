@@ -1,41 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <link rel="stylesheet" type="text/css" href="index.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="index.js"></script>
     <title>Document</title>
 </head>
 <body>
-    <div id="container">
-		<header>
-			<h1><a href="#">Bug.gg</a></h1>
-		</header>
+<div id="container">
+    <header>
+        <h1><a href="#">Bug.gg</a></h1>
+    </header>
+    <div class="wrap">
         <div id="imagewrap">
-            <img src="/image/616d626c61636b2e706e67.png" alt="My Image">
+            <img src="image/616d626c61636b2e706e67.png" alt="My Image">
         </div>
-        <div id="wrap">
-            <form method="get" action="/summoner">
-                <input type="text" id="name" name="summonername" required minlength="4" maxlength="13" size="10">
-                <div id="searchbutton">
-                    <input type='submit' value='search'/>
-                </div>
-            </form>
-        </div>
-        <footer>
-            <div id="footerdiv">
-                <nav>
-                    <a href='#' target='_blank'>Blog</a> |
-                    <a href='#' target='_blank'>Github</a>
-                </nav>
-                <p>
-                    <span>name : hamster </span><br/>
-                    <span>email : ssoboro1@gmail.com</span><br/>
-                    <span>Copyright 2022. hamster. All Rights Reserved.</span>
-                </p>
+        <form method="get" action="/summoner">
+            <input type="text" id="name" name="summonername"
+                   required minlength="4" maxlength="13" size="10" onkeyup="characterCheck(this)" onkeydown="characterCheck(this)">
+            <div id="searchbutton">
+                <input type='submit' value='search'/>
             </div>
-        </footer>
-	</div>
+        </form>
+        <div id="scrollbox">
+            <img src="image/pngwing.com.png" alt="My">
+            <div id="textbox">
+                칼바람 나락 전용 전적검색 사이트입니다.<br><br>
+                아쉽게도 소환사의 협곡의 전적은 지원하지않습니다.<br><br>
+                현재 시험버전으로 팀내 Worst찾기와 <br><br>
+                간단한 전적검색기능만을 제공합니다.<br><br>
+                존나 못한새끼 친구들끼리 싸우면서 찾지마세요<br><br>
+                저희가 찾아드립니다.<br><br>
+                감사합니다.<br><br>
+                - 주인 올림-
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div id="footerdiv">
+            <nav>
+                <a href='#' target='_blank'>Blog</a> |
+                <a href='#' target='_blank'>Github</a>
+            </nav>
+            <p>
+                <span>name : hamster </span><br/>
+                <span>email : ssoboro1@gmail.com</span><br/>
+                <span>Copyright 2022. hamster. All Rights Reserved.</span>
+            </p>
+        </div>
+    </footer>
+</div>
 </body>
 </html>
